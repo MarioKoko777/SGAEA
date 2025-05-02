@@ -1,4 +1,3 @@
-
 export class Asignatura {
   constructor(id, nombre, curso) {
     this.id = id;
