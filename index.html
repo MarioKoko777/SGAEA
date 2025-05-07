@@ -1,82 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>SGAEA - Introducción por Consola</title>
-</head>
-<body>
-  <h1>SGAEA - Gestión Académica</h1>
-  <p>Abre la consola del navegador para interactuar con el sistema.</p>
-
-  <script type="module">
-    import { SGAEA } from './js/SGAEA.js';
-
-    const sistema = new SGAEA();
-
-    const numEstudiantes = parseInt(prompt("¿Cuántos estudiantes deseas introducir?"));
-
-    for (let i = 0; i < numEstudiantes; i++) {
-      let id = parseInt(prompt(`ID del estudiante ${i + 1}`));
-      let nombre = prompt(`Nombre del estudiante ${i + 1}`);
-      let edad = parseInt(prompt(`Edad del estudiante ${i + 1}`));
-      let calle = prompt(`Calle del estudiante ${i + 1}`);
-      let numero = prompt(`Número de calle`);
-      let piso = prompt(`Piso`);
-      let cp = prompt(`Código postal`);
-      let provincia = prompt(`Provincia`);
-      let localidad = prompt(`Localidad`);
-      try {
-        sistema.insertaEstudiante(id, nombre, edad, calle, numero, piso, cp, provincia, localidad);
-      } catch (e) {
-        console.error(e.message);
-        i--;
-      }
-    }
-
-    const numAsignaturas = parseInt(prompt("¿Cuántas asignaturas deseas introducir?"));
-
-    for (let i = 0; i < numAsignaturas; i++) {
-      let id = parseInt(prompt(`ID de la asignatura ${i + 1}`));
-      let nombre = prompt(`Nombre de la asignatura ${i + 1}`);
-      let curso = prompt(`Curso de la asignatura`);
-      try {
-        sistema.creaAsignatura(id, nombre, curso);
-      } catch (e) {
-        console.error(e.message);
-        i--;
-      }
-    }
-
-    for (let [idEstudiante, estudiante] of sistema.estudiantes.entries()) {
-      for (let [idAsignatura, asignatura] of sistema.asignaturas.entries()) {
-        const respuesta = prompt(`¿Matricular a ${estudiante.nombre} en ${asignatura.nombre}? (s/n)`);
-        if (respuesta.toLowerCase() === 's') {
-          sistema.matriculaEstudiante(idEstudiante, idAsignatura);
-        }
-      }
-    }
-
-    for (let [idEstudiante, estudiante] of sistema.estudiantes.entries()) {
-      for (let [idAsignatura, asignatura] of estudiante.matriculas.entries()) {
-        let cantidadNotas = parseInt(prompt(`¿Cuántas notas vas a introducir para ${estudiante.nombre} en ${idAsignatura}?`));
-        for (let i = 0; i < cantidadNotas; i++) {
-          let nota = parseFloat(prompt(`Introduce la nota ${i + 1}:`));
-          sistema.califica(idEstudiante, idAsignatura, nota);
-        }
-      }
-    }
-
-    console.log("📝 INFORME GENERAL:");
-    console.log(sistema.informeGeneral());
-
-    console.log("📚 LISTADO DE ESTUDIANTES:");
-    console.log(sistema.listadoEstudiantes());
-
-    console.log("📖 LISTADO DE ASIGNATURAS:");
-    console.log(sistema.listadoAsignaturas());
-
-    console.log("📌 LISTADO DE MATRÍCULAS:");
-    console.log(sistema.listadoMatriculas());
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>SGAEA - Gestión Académica</title>
+    
+  </head>
+  <body>
+    <h1>SGAEA - Sistema de Gestión Académica</h1>
+    <p>Abre la consola del navegador para ver los resultados de las pruebas.</p>
+    <script type="module" src="./tests/pruebas.js"></script>
+  </body>
 </html>
