@@ -72,7 +72,6 @@ function menu() {
     console.log("0. Salir");
     
     opcion = prompt("Seleccione una opción:");
-    opcion = Number(opcion);
     switch (opcion) {
       case "1":
         try {
