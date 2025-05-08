@@ -55,27 +55,27 @@ console.log(sistema.listadoMatriculas());
 function menu() {
   let opcion;
   do {
-    opcion = prompt(
-      `Menú Principal:
-1. Insertar Estudiante
-2. Crear Asignatura
-3. Matricular Estudiante
-4. Calificar Estudiante
-5. Ver informe individual
-6. Ver informe general
-7. Ver listado de estudiantes
-8. Ver listado de asignaturas
-9. Ver listado de matrículas
-10. Eliminar Estudiante
-11. Eliminar Asignatura
-12. Desmatricular Estudiante
-13. Buscar Estudiante o Asignatura
-0. Salir
-Seleccione una opción:`
-    );
+    console.log("Menú Principal:");
+    console.log("1. Insertar Estudiante");
+    console.log("2. Crear Asignatura");
+    console.log("3. Matricular Estudiante");
+    console.log("4. Calificar Estudiante");
+    console.log("5. Ver informe individual");
+    console.log("6. Ver informe general");
+    console.log("7. Ver listado de estudiantes");
+    console.log("8. Ver listado de asignaturas");
+    console.log("9. Ver listado de matrículas");
+    console.log("10. Eliminar Estudiante");
+    console.log("11. Eliminar Asignatura");
+    console.log("12. Desmatricular Estudiante");
+    console.log("13. Buscar Estudiante o Asignatura");
+    console.log("0. Salir");
+    
+    opcion = prompt("Dime la opción que desees realizar");
+    opcion = Number(opcion);
     
     switch (opcion) {
-      case "1":
+      case 1:
         try {
           const id = Number(prompt("ID del estudiante:"));
           const nombre = prompt("Nombre:");
@@ -92,7 +92,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "2":
+      case 2:
         try {
           const id = Number(prompt("ID de la asignatura:"));
           const nombre = prompt("Nombre:");
@@ -103,7 +103,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "3":
+      case 3:
         try {
           const idEstudiante = Number(prompt("ID del estudiante:"));
           const idAsignatura = Number(prompt("ID de la asignatura:"));
@@ -113,7 +113,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "4":
+      case 4:
         try {
           const idEstudiante = Number(prompt("ID del estudiante:"));
           const idAsignatura = Number(prompt("ID de la asignatura:"));
@@ -124,7 +124,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "5":
+      case 5:
         try {
           const id = Number(prompt("ID del estudiante:"));
           const informe = sistema.informeGeneral(id);
@@ -133,19 +133,19 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "6":
+      case 6:
         console.log("Informe general:", sistema.informeGeneral());
         break;
-      case "7":
+      case 7:
         console.log("Listado de estudiantes:", sistema.listadoEstudiantes());
         break;
-      case "8":
+      case 8:
         console.log("Listado de asignaturas:", sistema.listadoAsignaturas());
         break;
-      case "9":
+      case 9:
         console.log("Listado de matrículas:", sistema.listadoMatriculas());
         break;
-      case "10":
+      case 10:
         try {
           const idEstudiante = Number(prompt("ID del estudiante a eliminar:"));
           sistema.eliminaEstudiante(idEstudiante);
@@ -154,7 +154,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "11":
+      case 11:
         try {
           const idAsignatura = Number(prompt("ID de la asignatura a eliminar:"));
           sistema.asignaturas.delete(idAsignatura);
@@ -163,7 +163,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "12":
+      case 12:
         try {
           const idEstudiante = Number(prompt("ID del estudiante:"));
           const idAsignatura = Number(prompt("ID de la asignatura:"));
@@ -173,7 +173,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "13":
+      case 13:
         try {
           const textoBusqueda = prompt("Ingrese el texto a buscar:");
           const estudiantesEncontrados = sistema.buscaEstudiante(textoBusqueda);
@@ -184,7 +184,7 @@ Seleccione una opción:`
           console.error("Error:", err.message);
         }
         break;
-      case "0":
+      case 0:
         console.log("Saliendo del sistema...");
         break;
       default:
