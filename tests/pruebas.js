@@ -70,7 +70,7 @@ console.log(sistema.listadoMatriculas());
     console.log("13. Buscar Estudiante o Asignatura");
     console.log("0. Salir");
     
-    opcion.parseInt(window.prompt("Elección:"));
+    opcion = parseInt(window.prompt("Elección:"));
     
     switch (opcion) {
       case 1:
