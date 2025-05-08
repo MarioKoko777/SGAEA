@@ -69,9 +69,7 @@ do {
     console.log("12. Desmatricular Estudiante");
     console.log("13. Buscar Estudiante o Asignatura");
     console.log("0. Salir");
-    
     opcion = Number(opcion);
-    
     switch (opcion) {
       case 1:
         try {
