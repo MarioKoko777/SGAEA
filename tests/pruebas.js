@@ -52,7 +52,8 @@ console.log("LISTADO MATRÍCULAS:");
 console.log(sistema.listadoMatriculas());
 
 // Menú interactivo por consola
-  do {
+let opcion = 0;  
+do {
     console.log("Menú Principal:");
     console.log("1. Insertar Estudiante");
     console.log("2. Crear Asignatura");
@@ -69,7 +70,8 @@ console.log(sistema.listadoMatriculas());
     console.log("13. Buscar Estudiante o Asignatura");
     console.log("0. Salir");
     
-    opcion = Number.parseInt(window.prompt("Elección:"));
+    opcion = prompt("Dime la opción que desees realizar");
+    opcion = Number(opcion);
     
     switch (opcion) {
       case 1:
