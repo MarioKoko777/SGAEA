@@ -57,24 +57,24 @@ console.log(sistema.listadoMatriculas());
 function menu() {
   let opcion;
   do {
-    opcion = prompt(
-      `Menú Principal:
-1. Insertar Estudiante
-2. Crear Asignatura
-3. Matricular Estudiante
-4. Calificar Estudiante
-5. Ver informe individual
-6. Ver informe general
-7. Ver listado de estudiantes
-8. Ver listado de asignaturas
-9. Ver listado de matrículas
-10. Eliminar Estudiante
-11. Eliminar Asignatura
-12. Desmatricular Estudiante
-13. Buscar Estudiante o Asignatura
-0. Salir
-Seleccione una opción:`
-    );
+    console.log("Opciones:");
+    console.log("1. Insertar Estudiante");
+    console.log("2. Crear Asignatura");
+    console.log("3. Matricular Estudiante");
+    console.log("4. Calificar Estudiante");
+    console.log("5. Ver informe individual");
+    console.log("6. Ver informe general");
+    console.log("7. Ver listado de estudiantes");
+    console.log("8. Ver listado de asignaturas");
+    console.log("9. Ver listado de matrículas");
+    console.log("10. Eliminar Estudiante");
+    console.log("11. Eliminar Asignatura");
+    console.log("12. Desmatricular Estudiante");
+    console.log("13. Buscar Estudiante o Asignatura");
+    console.log("0. Salir");
+    
+    opcion = prompt("Seleccione una opción:");
+    opcion = Number(opcion);
     switch (opcion) {
       case "1":
         try {
