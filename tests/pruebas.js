@@ -70,7 +70,6 @@ do {
     console.log("13. Buscar Estudiante o Asignatura");
     console.log("0. Salir");
     
-    opcion = window.prompt("Dime la opción que desees realizar");
     opcion = Number(opcion);
     
     switch (opcion) {
