@@ -71,6 +71,7 @@ console.log(sistema.listadoMatriculas());
     console.log("0. Salir");
     
     opcion = parseInt(window.prompt("Elección:"));
+    opcion = input ? parseInt(input) : 0;
     
     switch (opcion) {
       case 1:
