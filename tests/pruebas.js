@@ -190,4 +190,3 @@ console.log(sistema.listadoMatriculas());
         break;
     }
   } while (opcion !== "0");
-}
