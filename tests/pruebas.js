@@ -190,4 +190,4 @@ do {
         console.warn("Opción no válida. Intente de nuevo.");
         break;
     }
-  } while (opcion !== "0");
+  } while (opcion !== 0);
