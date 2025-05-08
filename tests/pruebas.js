@@ -52,7 +52,6 @@ console.log("LISTADO MATRÍCULAS:");
 console.log(sistema.listadoMatriculas());
 
 // Menú interactivo por consola
-function menu() {
   let opcion;
   do {
     console.log("Menú Principal:");
@@ -193,5 +192,3 @@ function menu() {
     }
   } while (opcion !== "0");
 }
-// Ejecutar menú
-menu();
